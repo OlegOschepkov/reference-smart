@@ -1,0 +1,153 @@
+.page-slogan {
+  position: relative;
+  margin-top: 176px;
+  min-height: 515px;
+}
+
+.page-slogan__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.page-slogan__title {
+  margin: 0;
+  padding: 0;
+  font-family: $roboto-font;
+  font-weight: bold;
+  font-size: 80px;
+  line-height: 94px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: $white;
+  margin-bottom: 34px;
+}
+
+.page-slogan__text-wrapper {
+  display: flex;
+  width: 60%;
+  flex-wrap: nowrap;
+  margin-bottom: 31px;
+}
+
+.page-slogan__stripe {
+  height: 2px;
+  width: 66px;
+  background-color: $white;
+  margin-top: 20px;
+}
+
+.page-slogan__text {
+  margin: 0;
+  padding: 0;
+  margin-left: 28px;
+  font-family: $mono-font;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 34px;
+  color: $white;
+}
+
+.page-slogan__link {
+  font-family: $roboto-font;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $white;
+  padding: 15px 28px;
+  background-color: $blue;
+  border: 1px solid $blue;
+  border-radius: 5px;
+}
+
+.page-slogan__scroll {
+  position: absolute;
+  left: 0;
+  bottom: 100px;
+  display: inline-block;
+  transform: rotate(-90deg) translateY(-44px);
+  font-family: $mono-font;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: $white;
+  opacity: 0.5;
+  transition: opacity .3s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.page-slogan__photo {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  max-width: 705px;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+@media (max-width: $tablet-width) {
+  .page-slogan__title {
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  .page-slogan__text {
+    font-size: 18px;
+    line-height: 156.8%;
+  }
+
+  .page-slogan__stripe {
+    width: 33px;
+  }
+
+  .page-slogan__photo {
+    right: -10px;
+    left: auto;
+    top: 0;
+    transform: none;
+    max-width: 260px;
+  }
+
+  .page-slogan__wrapper {
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .page-slogan__title {
+    font-size: 40px;
+    line-height: 47px;
+  }
+
+  .page-slogan__text {
+    font-size: 16px;
+  }
+
+  .page-slogan__photo {
+    right: 50%;
+    top: -100px;
+    transform: translateX(50%);
+    max-width: 310px;
+  }
+
+  .page-slogan__text-wrapper {
+    width: 100%;
+  }
+
+  .page-slogan__link {
+    margin: 0 auto;
+  }
+
+  .page-slogan__wrapper {
+    margin-left: 0;
+  }
+}

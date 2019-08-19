@@ -1,0 +1,13 @@
+.write-us {
+  background-color: $blue;
+  padding: 96px 15px 101px;
+  background-repeat: no-repeat;
+  background-position: left 150px center;
+  background-size: 511px;
+}
+
+@media (max-width: $tablet-width) {
+  .write-us {
+    background-image: none !important;
+  }
+}

@@ -23,6 +23,14 @@ ul {
   list-style: none;
 }
 
+h1, h2, h3 {
+  @include reset();
+}
+
+p {
+  @include reset();
+}
+
 a {
   text-decoration: none;
 }
@@ -41,6 +49,10 @@ html [type="button"],
   background-color: transparent;
 }
 
+button {
+  text-transform: uppercase ;
+}
+
 .hidden {
   display: none !important;
 }
@@ -54,4 +66,75 @@ html [type="button"],
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+.wrapper-wide {
+  max-width: 1330px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wrapper-footer {
+  max-width: 1330px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+picture {
+  font-size: 0;
+  line-height: 0;
+}
+
+.wrapper {
+  max-width: 1170px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.media-tablet,
+.media-mobile {
+  display: none;
+}
+
+.media-desktop {
+  display: block;
+}
+
+label.active-label {
+  top: 0;
+  left: 5px;
+  font-size: 12px;
+}
+
+@media (max-width: $tablet-width) {
+  .wrapper-wide {
+    width: auto;
+    padding: 0 15px;
+  }
+
+  .media-desktop,
+  .media-mobile {
+    display: none;
+  }
+
+  .media-tablet {
+    display: block;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .wrapper-wide {
+    width: auto;
+    margin: 0 10px;
+    padding: 0;
+  }
+
+  .media-desktop,
+  .media-tablet {
+    display: none;
+  }
+
+  .media-mobile {
+    display: block;
+  }
 }

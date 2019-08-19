@@ -1,0 +1,32 @@
+.social-list {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 55px;
+}
+
+.social-list__item {
+  margin-left: 15px;
+
+  svg {
+    transition: fill 0.3s ease-in-out;
+    fill: $grey9;
+  }
+
+  &:hover {
+    svg {
+      fill: $dark-grey;
+    }
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .social-list {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .social-list {
+    margin-top: 15px;
+  }
+}

@@ -15,6 +15,7 @@ var svgstore = require('gulp-svgstore');
 var svgmin = require('gulp-svgmin');
 var concat = require('gulp-concat');
 var header = require('gulp-header');
+var cheerio = require('gulp-cheerio');
 
 gulp.task('styles', function () {
   gulp.src('source/scss/**/*.scss')
@@ -125,6 +126,12 @@ gulp.task('symbols', function () {
   var svgs = gulp
     .src('source/img/sprite/*.svg')
     .pipe(svgmin())
+    .pipe(cheerio({
+      run: function ($) {
+        $('[fill]').removeAttr('fill');
+      },
+      parserOptions: { xmlMode: true }
+    }))
     .pipe(svgstore({
       inlineSvg: true
     }))

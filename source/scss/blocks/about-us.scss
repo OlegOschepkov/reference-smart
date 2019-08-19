@@ -1,0 +1,73 @@
+.about-us {
+  padding: 0 15px 110px;
+}
+
+.about-us__year {
+  display: inline-block;
+  font-family: $roboto-font;
+  font-size: 120px;
+  line-height: 1;
+  font-weight: bold;
+  color: transparent;
+  background-clip: text;
+  background-image: url("../img/year-back.png");
+  margin: 0;
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 80px;
+  left: -50px;
+}
+
+.about-us__container {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 10px;
+}
+
+.about-us__title {
+  font-family: $roboto-font;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 51px;
+  margin: 0;
+}
+
+.about-us__text {
+  margin: 0;
+  margin-bottom: 15px;
+  font-family: $mono-font;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.about-us__story {
+  padding-left: 150px;
+}
+
+.about-us__link {
+  background-color: transparent;
+  border: 1px solid $blue;
+  border-radius: 5px;
+  padding: 14px 20px;
+  color: $blue;
+  @include hover-white();
+}
+
+@media (max-width: $tablet-width) {
+  .about-us__title {
+    font-size: 32px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .about-us__title {
+    font-size: 28px;
+    line-height: 1.4;
+  }
+
+  .about-us__story {
+    padding-left: 0;
+  }
+}
