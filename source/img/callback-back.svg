@@ -1,0 +1,11 @@
+<svg width="1920" height="670" viewBox="0 0 1920 670" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path opacity="0.2" d="M801.842 99.5836L527.167 575.334L252.492 99.5837L801.842 99.5836Z" stroke="white"/>
+  <path opacity="0.2" d="M522.148 297.75L361.5 576L200.852 297.75L522.148 297.75Z" stroke="white"/>
+  <path opacity="0.2" d="M1996.26 449.5L1718.01 610.148L1718.01 288.852L1996.26 449.5Z" stroke="white"/>
+  <path opacity="0.2" d="M1643.91 195.136L1818.25 94.48L1818.25 295.793L1643.91 195.136Z" stroke="white"/>
+  <circle cx="252" cy="99" r="5" fill="white"/>
+  <circle cx="201" cy="298" r="5" fill="white"/>
+  <circle cx="362" cy="576" r="5" fill="white"/>
+  <circle cx="527" cy="575" r="5" fill="white"/>
+  <circle cx="802" cy="99" r="5" fill="white"/>
+</svg>

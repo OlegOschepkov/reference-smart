@@ -4,6 +4,7 @@
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  padding: 0 23px 0 19px;
 }
 
 .top-nav__sub-block {
@@ -17,9 +18,10 @@
   padding: 0;
   height: 37px;
   width: 37px;
-  margin-left: 9%;
+  margin-left: 8%;
   margin-right: auto;
   position: relative;
+  cursor: pointer;
 
   &::after, &::before {
     content: '';
@@ -28,24 +30,25 @@
     height: 1px;
     background-color: $white;
     left: 0;
-    top: 12px;
+    top: 10px;
   }
 
   &::before {
     top: auto;
-    bottom: 12px;
+    bottom: 14px;
   }
 }
 
 .top-nav__mail,
 .top-nav__phone {
-  margin-right: 88px;
+  margin-right: 87px;
   font-size: 16px;
   line-height: 18px;
   font-family: $mono-font;
   color: $white;
-  padding-left: 30px;
+  padding-left: 35px;
   position: relative;
+  @include hover();
 
   svg {
     position: absolute;
@@ -57,7 +60,7 @@
 }
 
 .top-nav__phone {
-  margin-right: 38px;
+  margin-right: 48px;
 }
 
 .top-nav__callback {
@@ -65,7 +68,7 @@
   border: 1px solid $white;
   border-radius: 5px;
   color: $white;
-  padding: 15px 20px;
+  padding: 14px 27px;
   cursor: pointer;
   font-family: $roboto-font;
   font-weight: bold;
@@ -78,9 +81,20 @@
 }
 
 @media (max-width: $tablet-width) {
+  .top-nav {
+    padding: 0 10px;
+  }
   .top-nav__mail,
   .top-nav__phone {
     margin-right: 0;
+    margin-bottom: 12px;
+    padding: 0;
+    width: 24px;
+
+    svg {
+      height: 24px;
+      width: 24px;
+    }
   }
 
   .top-nav__mail {
@@ -90,21 +104,25 @@
   .top-nav__menu {
     margin-left: auto;
     margin-right: 40px;
+    margin-bottom: 12px;
   }
 }
 
 @media (max-width: $mobile-width) {
-  .top-nav__mail,
+  .top-nav {
+    padding: 0 8px;
+  }
+
   .top-nav__phone {
     margin-right: 0;
   }
 
   .top-nav__mail {
-    margin-right: 30px;
+    margin-right: 22px;
   }
 
   .top-nav__menu {
     margin-left: auto;
-    margin-right: 40px;
+    margin-right: 27px;
   }
 }

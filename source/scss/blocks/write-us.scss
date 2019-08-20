@@ -1,13 +1,21 @@
 .write-us {
   background-color: $blue;
-  padding: 96px 15px 101px;
-  background-repeat: no-repeat;
-  background-position: left 150px center;
-  background-size: 511px;
+  padding: 91px 15px 71px;
+  background-repeat: no-repeat, no-repeat;
+  background-position: left 27.3% top 42.7%, center;
+  background-size: 511px, cover;
 }
 
 @media (max-width: $tablet-width) {
   .write-us {
     background-image: none !important;
+    padding: 78px 88px 63px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .write-us {
+    background-image: none !important;
+    padding: 29px 15px 11px;
   }
 }

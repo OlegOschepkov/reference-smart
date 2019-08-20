@@ -5,7 +5,7 @@
 .copyright__container {
   display: flex;
   justify-content: flex-start;
-  padding: 0 15px;
+  padding: 0 5px;
 }
 
 .copyright__text,
@@ -23,7 +23,7 @@
 
 .copyright__text {
   &:first-of-type {
-    margin-right: 59px;
+    margin-right: 73px;
   }
 
   &:nth-of-type(2) {
@@ -34,5 +34,36 @@
 .copyright__link {
   &:first-of-type {
     margin-right: auto;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .copyright__container {
+    padding: 0 13px;
+  }
+
+  .copyright__text,
+  .copyright__link {
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .copyright {
+    border: none;
+    padding-top: 13px;
+  }
+
+  .copyright__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .copyright__link {
+    margin: 12px 0;
+
+    &:first-of-type {
+      margin: 12px 0;
+    }
   }
 }

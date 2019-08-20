@@ -1,7 +1,8 @@
 .page-slogan {
   position: relative;
-  margin-top: 176px;
+  margin-top: 226px;
   min-height: 515px;
+  padding: 0 15px;
 }
 
 .page-slogan__wrapper {
@@ -22,21 +23,22 @@
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: $white;
-  margin-bottom: 34px;
+  margin-bottom: 27px;
 }
 
 .page-slogan__text-wrapper {
   display: flex;
-  width: 60%;
+  max-width: 770px;
   flex-wrap: nowrap;
-  margin-bottom: 31px;
+  margin-bottom: 44px;
 }
 
 .page-slogan__stripe {
   height: 2px;
-  width: 66px;
+  width: 82px;
   background-color: $white;
-  margin-top: 20px;
+  margin-top: 17px;
+  margin-left: 4px;
 }
 
 .page-slogan__text {
@@ -58,16 +60,18 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: $white;
-  padding: 15px 28px;
+  padding: 17px 45px;
   background-color: $blue;
   border: 1px solid $blue;
   border-radius: 5px;
+  margin-left: 98px;
+  @include hover-blue();
 }
 
 .page-slogan__scroll {
   position: absolute;
-  left: 0;
-  bottom: 100px;
+  left: 9px;
+  bottom: 79px;
   display: inline-block;
   transform: rotate(-90deg) translateY(-44px);
   font-family: $mono-font;
@@ -85,47 +89,73 @@
 
 .page-slogan__photo {
   position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
+  top: -57px;
+  right: -58px;
   max-width: 705px;
   width: 100%;
   height: auto;
   z-index: 0;
+  background-repeat: no-repeat;
+  background-size: 705px;
+  background-position: center top -155px;
 }
 
 @media (max-width: $tablet-width) {
+  .page-slogan {
+    margin-top: 109px;
+    min-height: 450px;
+  }
+
   .page-slogan__title {
     font-size: 60px;
     line-height: 70px;
+    margin-bottom: 29px;
   }
 
   .page-slogan__text {
     font-size: 18px;
     line-height: 156.8%;
+    margin-left: 13px;
   }
 
   .page-slogan__stripe {
-    width: 33px;
+    width: 60px;
   }
 
   .page-slogan__photo {
-    right: -10px;
+    right: -18px;
     left: auto;
-    top: 0;
+    top: -77px;
     transform: none;
     max-width: 260px;
   }
 
   .page-slogan__wrapper {
-    margin-left: 30px;
+    margin-left: 58px;
+    max-width: 430px;
+  }
+
+  .page-slogan__link {
+    margin-left: 51px;
+    padding: 17px 30px;
+  }
+
+  .page-slogan__text-wrapper {
+   margin-bottom: 55px;
   }
 }
 
 @media (max-width: $mobile-width) {
+  .page-slogan {
+    margin-top: 223px;
+    padding: 0 5px;
+    min-height: 313px;
+  }
+
   .page-slogan__title {
     font-size: 40px;
     line-height: 47px;
+    margin-bottom: 26px;
   }
 
   .page-slogan__text {
@@ -133,14 +163,15 @@
   }
 
   .page-slogan__photo {
-    right: 50%;
-    top: -100px;
+    right: calc(50% - 17px);
+    top: -194px;
     transform: translateX(50%);
     max-width: 310px;
   }
 
   .page-slogan__text-wrapper {
     width: 100%;
+    margin-bottom: 41px;
   }
 
   .page-slogan__link {
@@ -149,5 +180,9 @@
 
   .page-slogan__wrapper {
     margin-left: 0;
+  }
+
+  .page-slogan__stripe {
+    width: 81px;
   }
 }

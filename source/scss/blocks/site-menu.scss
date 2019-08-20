@@ -8,7 +8,11 @@
 }
 
 .site-menu__item:first-of-type {
-  margin-right: 65px;
+  margin-right: 72px;
+}
+
+.site-menu__item:last-of-type {
+  margin-right: 32px;
 }
 
 .site-menu__link {
@@ -33,7 +37,7 @@
 
 @media (max-width: $mobile-width) {
   .site-menu {
-    //align-items: center;
+    margin-bottom: 26px;
   }
 
   .site-menu__item {

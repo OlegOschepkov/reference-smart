@@ -1,27 +1,27 @@
 .about-us {
-  padding: 0 15px 110px;
+  padding: 0 15px 121px;
 }
 
 .about-us__year {
   display: inline-block;
   font-family: $roboto-font;
-  font-size: 120px;
+  font-size: 160px;
   line-height: 1;
   font-weight: bold;
+  letter-spacing: -0.01em;
   color: transparent;
   background-clip: text;
   background-image: url("../img/year-back.png");
   margin: 0;
   transform: rotate(-90deg);
   position: absolute;
-  top: 80px;
-  left: -50px;
+  top: 84px;
+  left: -100px;
 }
 
 .about-us__container {
   display: flex;
   justify-content: flex-start;
-  padding: 0 10px;
 }
 
 .about-us__title {
@@ -30,44 +30,79 @@
   font-size: 36px;
   line-height: 51px;
   margin: 0;
+  margin-bottom: 21px;
 }
 
 .about-us__text {
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   font-family: $mono-font;
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
+
+  &:last-of-type {
+    margin-bottom: 51px;
+  }
 }
 
 .about-us__story {
-  padding-left: 150px;
+  padding-left: 180px;
 }
 
 .about-us__link {
-  background-color: transparent;
   border: 1px solid $blue;
   border-radius: 5px;
-  padding: 14px 20px;
+  padding: 13px 46px;
   color: $blue;
+  text-transform: uppercase;
   @include hover-white();
+  background-color: $white;
 }
 
 @media (max-width: $tablet-width) {
+  .about-us {
+    padding: 0;
+    padding-top: 26px;
+  }
+
+  .about-us__year {
+    font-size: 180px;
+    left: -107px;
+    top: 90px;
+  }
+
+  .about-us__story {
+    padding-left: 190px;
+  }
+
   .about-us__title {
     font-size: 32px;
     line-height: 1.4;
+    margin-bottom: 25px;
   }
 }
 
 @media (max-width: $mobile-width) {
+  .about-us {
+    padding-top: 35px;
+  }
+
   .about-us__title {
     font-size: 28px;
     line-height: 1.4;
+    margin-bottom: 21px;
   }
 
   .about-us__story {
-    padding-left: 0;
+    padding-left: 3px;
+  }
+
+  .about-us__text {
+    margin-bottom: 41px;
+
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
   }
 }
