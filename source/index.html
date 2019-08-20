@@ -21,15 +21,15 @@
             <picture>
               <source media="(max-width: 767px)" srcset="img/logo-m.png 1x, img/logo-m@2x.png 2x">
               <source media="(max-width: 1023px)" srcset="img/logo-d.png 1x, img/logo-d@2x.png 2x">
-              <img class="logo__img" src="img/logo-d.png" srcset="img/logo-d@2x.png 2x" alt="Smart Device" width="202" height="52"/>
+              <img class="logo__img" src="img/logo-d.png" srcset="img/logo-d@2x.png 2x" alt="лого Smart Device" width="202" height="52"/>
             </picture>
           </a>
         </div>
         <button class="top-nav__menu"><span class="visually-hidden">Вызов меню</span></button>
-        <a class="top-nav__mail" href="mailto:info@sd.ru"><svg width="19" height="14">
+        <a class="top-nav__mail" href="mailto:info@sd.ru" aria-label="Написать"><svg width="19" height="14">
           <use xlink:href="sprite/sprite.svg#envelope"></use></svg><span class="media-desktop">info@sd.ru</span>
         </a>
-        <a class="top-nav__phone" href="tel:+74950005252">
+        <a class="top-nav__phone" href="tel:+74950005252" aria-label="Позвонить">
           <svg width="17" height="17"><use xlink:href="sprite/sprite.svg#phone-call"></use></svg><span class="media-desktop">+7 (495) 000 52 52</span>
         </a>
         <a href="#modal" class="top-nav__callback js-callback media-desktop">Заказать звонок</a>
@@ -120,7 +120,7 @@
               <picture>
                 <source media="(max-width: 767px)" srcset="img/services_m1.png 1x, img/services_m1@2x.png 2x">
                 <source media="(max-width: 1023px)" srcset="img/services_t1.png 1x, img/services_t1@2x.png 2x">
-                <img src="img/services_1.png" srcset="img/services_1@2x.png 2x" alt="Smart Device"/>
+                <img src="img/services_1.png" srcset="img/services_1@2x.png 2x" alt="Производство  печатных плат"/>
               </picture>
             </div>
             <p class="services__text">Производство  печатных плат</p>
@@ -132,7 +132,7 @@
               <picture>
                 <source media="(max-width: 767px)" srcset="img/services_m2.png 1x, img/services_m2@2x.png 2x">
                 <source media="(max-width: 1023px)" srcset="img/services_t2.png 1x, img/services_t2@2x.png 2x">
-                <img src="img/services_2.png" srcset="img/services_2@2x.png 2x" alt="Smart Device"/>
+                <img src="img/services_2.png" srcset="img/services_2@2x.png 2x" alt="Монтаж печатных  плат"/>
               </picture>
             </div>
             <p class="services__text">Монтаж печатных  плат</p>
@@ -144,7 +144,7 @@
               <picture>
                 <source media="(max-width: 767px)" srcset="img/services_m3.png 1x, img/services_m3@2x.png 2x">
                 <source media="(max-width: 1023px)" srcset="img/services_t3.png 1x, img/services_t3@2x.png 2x">
-                <img src="img/services_3.png" srcset="img/services_3@2x.png 2x" alt="Smart Device"/>
+                <img src="img/services_3.png" srcset="img/services_3@2x.png 2x" alt="Комплектующие для светотехники"/>
               </picture>
             </div>
             <p class="services__text">Комплектующие для светотехники</p>
@@ -188,7 +188,7 @@
       <div class="footer-section__block footer-section__block--social">
         <div class="logo">
           <a href="" class="logo__link">
-              <img class="logo__img" src="img/logo-footer.png" srcset="img/logo-footer@2x.png 2x" alt="Smart Device" width="216" height="52"/>
+              <img class="logo__img" src="img/logo-footer.png" srcset="img/logo-footer@2x.png 2x" alt="Лого Smart Device" width="216" height="52"/>
           </a>
         </div>
         <p class="footer-section__text media-tablet media-mobile">1999-2018 SD Service Devices</p>
@@ -261,23 +261,23 @@
       <h3 class="callback-form__title">Закажите звонок</h3>
       <p class="callback-form__text">Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
       <div class="callback-form__block">
-        <input type="text" id="name" class="callback-form__input js-input">
-        <label for="name" class="callback-form__label">Имя</label>
+        <input type="text" id="name-m" class="callback-form__input js-input">
+        <label for="name-m" class="callback-form__label">Имя</label>
       </div>
       <div class="callback-form__block">
-        <input type="tel" id="phone" class="callback-form__input js-input js-phone">
-        <label for="phone" class="callback-form__label">Телефон</label>
+        <input type="tel" id="phone-m" class="callback-form__input js-input js-phone">
+        <label for="phone-m" class="callback-form__label">Телефон</label>
       </div>
       <div class="callback-form__block callback-form__block--wide">
-        <textarea id="question" class="callback-form__input callback-form__input--big js-input"></textarea>
-        <label for="question" class="callback-form__label">Ваш вопрос</label>
+        <textarea id="question-m" class="callback-form__input callback-form__input--big js-input"></textarea>
+        <label for="question-m" class="callback-form__label">Ваш вопрос</label>
       </div>
       <div class="callback-form__block">
         <button type="submit" class="callback-form__button">Задать вопрос</button>
       </div>
       <div class="callback-form__block">
-        <input type="checkbox" id="agreement" class="visually-hidden callback-form__check">
-        <label for="agreement" class="callback-form__check-label">Я согласен на обработку  персональных данных</label>
+        <input type="checkbox" id="agreement-m" class="visually-hidden callback-form__check">
+        <label for="agreement-m" class="callback-form__check-label">Я согласен на обработку  персональных данных</label>
       </div>
     </form>
     <button data-remodal-action="close" class="remodal-close"></button>
