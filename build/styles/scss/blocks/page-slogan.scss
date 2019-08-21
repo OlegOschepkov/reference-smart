@@ -24,6 +24,7 @@
   text-transform: uppercase;
   color: $white;
   margin-bottom: 27px;
+  max-width: 770px;
 }
 
 .page-slogan__text-wrapper {
@@ -70,7 +71,7 @@
 
 .page-slogan__scroll {
   position: absolute;
-  left: 9px;
+  left: 22px;
   bottom: 79px;
   display: inline-block;
   transform: rotate(-90deg) translateY(-44px);
@@ -96,8 +97,8 @@
   height: auto;
   z-index: 0;
   background-repeat: no-repeat;
-  background-size: 705px;
-  background-position: center top -155px;
+  background-size: 670px;
+  background-position: left -9px top -139px;
 }
 
 @media (max-width: $tablet-width) {
@@ -125,9 +126,18 @@
   .page-slogan__photo {
     right: -18px;
     left: auto;
-    top: -77px;
+    top: -105px;
     transform: none;
-    max-width: 260px;
+    width: 316px;
+    height: 385px;
+    background-size: 528px;
+    background-position: left -14px top -121px;
+
+    img {
+      position: relative;
+      top: 29px;
+      right: -55px;
+    }
   }
 
   .page-slogan__wrapper {
@@ -163,10 +173,17 @@
   }
 
   .page-slogan__photo {
-    right: calc(50% - 17px);
-    top: -194px;
-    transform: translateX(50%);
-    max-width: 310px;
+    right: -26px;
+    top: -217px;
+    width: 310px;
+    height: 400px;
+    background-size: 500px;
+    background-position: left 126px top -113px;
+
+    img {
+      top: 24px;
+      right: 1px;
+    }
   }
 
   .page-slogan__text-wrapper {

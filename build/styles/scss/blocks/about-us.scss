@@ -3,20 +3,17 @@
 }
 
 .about-us__year {
-  display: inline-block;
-  font-family: $roboto-font;
-  font-size: 160px;
-  line-height: 1;
-  font-weight: bold;
-  letter-spacing: -0.01em;
-  color: transparent;
-  background-clip: text;
-  background-image: url("../img/year-back.png");
+  display: block;
+  font-size: 0;
+  line-height: 0;
   margin: 0;
-  transform: rotate(-90deg);
   position: absolute;
-  top: 84px;
-  left: -100px;
+  top: 12px;
+  left: 0;
+
+  img {
+    height: 304px;
+  }
 }
 
 .about-us__container {
@@ -67,9 +64,12 @@
   }
 
   .about-us__year {
-    font-size: 180px;
-    left: -107px;
-    top: 90px;
+    top: 7px;
+    left: 5px;
+
+    img {
+      height: 347px;
+    }
   }
 
   .about-us__story {

@@ -18,10 +18,12 @@
   padding: 0;
   height: 37px;
   width: 37px;
-  margin-left: 8%;
+  margin-left: 8.3%;
   margin-right: auto;
   position: relative;
   cursor: pointer;
+  outline: none;
+  @include hover();
 
   &::after, &::before {
     content: '';

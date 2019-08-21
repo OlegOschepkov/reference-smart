@@ -15,9 +15,15 @@
 .remodal .remodal-close {
   left: auto;
   right: 0;
+  @include hover();
 }
 
 .remodal .remodal-close::before {
   font-size: 40px;
   color: $white;
+}
+
+.remodal .callback-form__check-label {
+  padding-right: 30px;
+  text-align: left;
 }

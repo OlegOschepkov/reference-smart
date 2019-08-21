@@ -1,5 +1,8 @@
-.site-menu {
+.site-menu{
   @include reset();
+}
+
+.site-menu__list {
   display: flex;
   list-style: none;
   align-items: flex-start;
@@ -30,13 +33,13 @@
 }
 
 @media (max-width: $tablet-width) {
-  .site-menu {
+  .site-menu__list {
     flex-direction: column;
   }
 }
 
 @media (max-width: $mobile-width) {
-  .site-menu {
+  .site-menu__list {
     margin-bottom: 26px;
   }
 

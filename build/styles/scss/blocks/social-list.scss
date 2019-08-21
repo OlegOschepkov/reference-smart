@@ -9,13 +9,14 @@
   margin-right: 15px;
 
   svg {
-    transition: fill 0.3s ease-in-out;
-    fill: $grey9;
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+    fill: $dark-grey;
   }
 
   &:hover {
     svg {
-      fill: $dark-grey;
+      opacity: 1;
     }
   }
 }

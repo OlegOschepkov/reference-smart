@@ -1,7 +1,7 @@
 .footer-section__container {
   display: flex;
   justify-content: flex-start;
-  padding: 65px 15px 58px;
+  padding: 65px 15px 58px 19px;
 }
 
 .footer-section__title {
@@ -20,7 +20,7 @@
 }
 
 .footer-section__block--social {
-  margin-right: 14.85%;
+  margin-right: 14.6%;
 }
 
 @media (max-width: $tablet-width) {

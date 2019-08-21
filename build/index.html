@@ -9,7 +9,6 @@
   <link rel="preload" href="fonts/RobotoCondensed.woff2" crossorigin="anonymous" as="font">
   <link rel="preload" href="fonts/PTMono.woff2" crossorigin="anonymous" as="font">
   <link href="styles/style.min.css" rel="stylesheet">
-  <script src="js/plugins/jquery.min.js"></script>
 </head>
 <body>
 
@@ -17,7 +16,7 @@
   <div class="wrapper-wide">
     <div class="top-nav">
         <div class="logo">
-          <a href="" class="logo__link">
+          <a href="#" class="logo__link">
             <picture>
               <source media="(max-width: 767px)" srcset="img/logo-m.png 1x, img/logo-m@2x.png 2x">
               <source media="(max-width: 1023px)" srcset="img/logo-d.png 1x, img/logo-d@2x.png 2x">
@@ -25,7 +24,7 @@
             </picture>
           </a>
         </div>
-        <button class="top-nav__menu"><span class="visually-hidden">Вызов меню</span></button>
+        <button type="button" class="top-nav__menu"><span class="visually-hidden">Вызов меню</span></button>
         <a class="top-nav__mail" href="mailto:info@sd.ru" aria-label="Написать"><svg width="19" height="14">
           <use xlink:href="sprite/sprite.svg#envelope"></use></svg><span class="media-desktop">info@sd.ru</span>
         </a>
@@ -96,7 +95,9 @@
     <section class="about-us">
       <div class="wrapper">
         <div class="about-us__container">
-          <p class="about-us__year media-desktop media-tablet">2005</p>
+          <div class="about-us__year media-desktop media-tablet">
+              <img src="img/year.png" srcset="img/year@2x.png 2x" alt="2005 год"/>
+          </div>
           <div class="about-us__story">
             <h2 class="about-us__title">О компании</h2>
             <p class="about-us__text">Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии
@@ -115,7 +116,7 @@
       <h3 class="services__title">Service Device предлагает следующие товары и услуги</h3>
       <ul class="services__list">
         <li class="services__item">
-          <a href="" class="services__link">
+          <a href="#" class="services__link">
             <div class="services__image">
               <picture>
                 <source media="(max-width: 767px)" srcset="img/services_m1.png 1x, img/services_m1@2x.png 2x">
@@ -123,11 +124,11 @@
                 <img src="img/services_1.png" srcset="img/services_1@2x.png 2x" alt="Производство  печатных плат"/>
               </picture>
             </div>
-            <p class="services__text">Производство  печатных плат</p>
+            <p class="services__text">Производство печатных плат</p>
           </a>
         </li>
         <li class="services__item">
-          <a href="" class="services__link">
+          <a href="#" class="services__link">
             <div class="services__image">
               <picture>
                 <source media="(max-width: 767px)" srcset="img/services_m2.png 1x, img/services_m2@2x.png 2x">
@@ -135,11 +136,11 @@
                 <img src="img/services_2.png" srcset="img/services_2@2x.png 2x" alt="Монтаж печатных  плат"/>
               </picture>
             </div>
-            <p class="services__text">Монтаж печатных  плат</p>
+            <p class="services__text">Монтаж печатных плат</p>
           </a>
         </li>
         <li class="services__item">
-          <a href="" class="services__link">
+          <a href="#" class="services__link">
             <div class="services__image">
               <picture>
                 <source media="(max-width: 767px)" srcset="img/services_m3.png 1x, img/services_m3@2x.png 2x">
@@ -147,7 +148,7 @@
                 <img src="img/services_3.png" srcset="img/services_3@2x.png 2x" alt="Комплектующие для светотехники"/>
               </picture>
             </div>
-            <p class="services__text">Комплектующие для светотехники</p>
+            <p class="services__text">Комплектующиe для светотехники</p>
           </a>
         </li>
       </ul>
@@ -159,15 +160,15 @@
         <h3 class="callback-form__title">Остались вопросы? Задайте их нам!</h3>
         <p class="callback-form__text">Мы проконсультируем Вас бесплатно</p>
         <div class="callback-form__block">
-          <input type="text" id="name" class="callback-form__input js-input">
+          <input type="text" id="name" class="callback-form__input js-input" required>
           <label for="name" class="callback-form__label">Имя</label>
         </div>
         <div class="callback-form__block">
-          <input type="tel" id="phone" class="callback-form__input js-input js-phone">
+          <input type="tel" id="phone" class="callback-form__input js-input js-phone" required>
           <label for="phone" class="callback-form__label">Телефон</label>
         </div>
         <div class="callback-form__block callback-form__block--wide">
-          <textarea id="question" class="callback-form__input callback-form__input--big js-input"></textarea>
+          <textarea id="question" class="callback-form__input callback-form__input--big js-input" required></textarea>
           <label for="question" class="callback-form__label">Ваш вопрос</label>
         </div>
         <div class="callback-form__block">
@@ -187,24 +188,24 @@
     <div class="footer-section__container">
       <div class="footer-section__block footer-section__block--social">
         <div class="logo">
-          <a href="" class="logo__link">
+          <a href="#" class="logo__link">
               <img class="logo__img" src="img/logo-footer.png" srcset="img/logo-footer@2x.png 2x" alt="Лого Smart Device" width="216" height="52"/>
           </a>
         </div>
         <p class="footer-section__text media-tablet media-mobile">1999-2018 SD Service Devices</p>
         <ul class="social-list">
           <li class="social-list__item">
-            <a href="" aria-label="facebook">
+            <a href="#" aria-label="facebook">
               <svg width="27" height="27"><use xlink:href="sprite/sprite.svg#fb"></use></svg>
             </a>
           </li>
           <li class="social-list__item">
-            <a href="" aria-label="Одноклассники">
+            <a href="#" aria-label="Одноклассники">
               <svg width="27" height="27"><use xlink:href="sprite/sprite.svg#ok"></use></svg>
             </a>
           </li>
           <li class="social-list__item">
-            <a href="" aria-label="vkontakte">
+            <a href="#" aria-label="vkontakte">
               <svg width="27" height="27"><use xlink:href="sprite/sprite.svg#vk"></use></svg>
             </a>
           </li>
@@ -212,30 +213,32 @@
       </div>
       <div class="footer-section__block">
         <h3 class="footer-section__title">Разделы сайта</h3>
-        <button class="footer-section__button footer-section__button--closed js-accordion media-mobile" aria-label="Переключение видимости меню"></button>
+        <button type="button" class="footer-section__button footer-section__button--closed js-accordion media-mobile" aria-label="Переключение видимости меню"></button>
         <menu class="site-menu">
-          <li class="site-menu__item">
-            <ul class="site-menu__sublist">
-              <li class="site-menu__subitem"><a class="site-menu__link" href="">О компании</a></li>
-              <li class="site-menu__subitem"><a class="site-menu__link" href="">Продукты</a></li>
-              <li class="site-menu__subitem"><a class="site-menu__link" href="">Производство печатных плат</a></li>
-              <li class="site-menu__subitem"><a class="site-menu__link" href="">Монтаж печатных плат</a></li>
-            </ul>
-          </li>
-          <li class="site-menu__item">
-            <ul class="site-menu__sublist">
-              <li class="site-menu__subitem"><a class="site-menu__link" href="">Комплектующие</a></li>
-              <li class="site-menu__subitem"><a class="site-menu__link" href="">Доставка</a></li>
-              <li class="site-menu__subitem"><a class="site-menu__link" href="">Контакты</a></li>
-            </ul>
-          </li>
+          <ul class="site-menu__list">
+            <li class="site-menu__item">
+              <ul class="site-menu__sublist">
+                <li class="site-menu__subitem"><a class="site-menu__link" href="#">О компании</a></li>
+                <li class="site-menu__subitem"><a class="site-menu__link" href="#">Продукты</a></li>
+                <li class="site-menu__subitem"><a class="site-menu__link" href="#">Производство печатных плат</a></li>
+                <li class="site-menu__subitem"><a class="site-menu__link" href="#">Монтаж печатных плат</a></li>
+              </ul>
+            </li>
+            <li class="site-menu__item">
+              <ul class="site-menu__sublist">
+                <li class="site-menu__subitem"><a class="site-menu__link" href="#">Комплектующие</a></li>
+                <li class="site-menu__subitem"><a class="site-menu__link" href="#">Доставка</a></li>
+                <li class="site-menu__subitem"><a class="site-menu__link" href="#">Контакты</a></li>
+              </ul>
+            </li>
+          </ul>
         </menu>
       </div>
       <div class="footer-section__block">
         <h3 class="footer-section__title">Наш офис</h3>
-        <button class="footer-section__button  footer-section__button--closed js-accordion media-mobile" aria-label="Переключение видимости меню"></button>
+        <button type="button" class="footer-section__button  footer-section__button--closed js-accordion media-mobile" aria-label="Переключение видимости меню"></button>
         <ul class="contacts">
-          <li class="contacts__item"><a class="contacts__link" href="">г. Мытищи, Олимпийский проспект, д.10</a></li>
+          <li class="contacts__item"><a class="contacts__link" href="#">г. Мытищи, Олимпийский проспект, д.10</a></li>
           <li class="contacts__item"><a class="contacts__link" href="tel:+74955894050">+7 (495) 589-40-50</a></li>
           <li class="contacts__item"><a class="contacts__link" href="tel:+79250038767">+7 (925) 003-87-67</a></li>
           <li class="contacts__item"><a class="contacts__link" href="tel:+79269268079">+7 (926) 926-80-79</a></li>
@@ -261,15 +264,15 @@
       <h3 class="callback-form__title">Закажите звонок</h3>
       <p class="callback-form__text">Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
       <div class="callback-form__block">
-        <input type="text" id="name-m" class="callback-form__input js-input">
+        <input type="text" id="name-m" class="callback-form__input js-input" required>
         <label for="name-m" class="callback-form__label">Имя</label>
       </div>
       <div class="callback-form__block">
-        <input type="tel" id="phone-m" class="callback-form__input js-input js-phone">
+        <input type="tel" id="phone-m" class="callback-form__input js-input js-phone" required>
         <label for="phone-m" class="callback-form__label">Телефон</label>
       </div>
       <div class="callback-form__block callback-form__block--wide">
-        <textarea id="question-m" class="callback-form__input callback-form__input--big js-input"></textarea>
+        <textarea id="question-m" class="callback-form__input callback-form__input--big js-input" required></textarea>
         <label for="question-m" class="callback-form__label">Ваш вопрос</label>
       </div>
       <div class="callback-form__block">
@@ -280,12 +283,11 @@
         <label for="agreement-m" class="callback-form__check-label">Я согласен на обработку  персональных данных</label>
       </div>
     </form>
-    <button data-remodal-action="close" class="remodal-close"></button>
+    <button type="button" data-remodal-action="close" class="remodal-close"></button>
   </div>
 </div>
 
-<script src="js/plugins/remodal.min.js"></script>
-<script src="js/plugins/jquery.mask.min.js"></script>
+<script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 </body>
 
