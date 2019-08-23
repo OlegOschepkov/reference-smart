@@ -4,16 +4,24 @@
   "description": "reference-smart-device",
   "author": "",
   "license": "MIT",
+  "browserslist": [
+    "last 1 version",
+    "last 2 Safari versions",
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Opera versions",
+    "last 2 Edge versions"
+  ],
   "scripts": {
     "build": "gulp build",
     "debug": "gulp debug",
     "start": "npm run debug && gulp serve",
     "prod": "gulp build && gulp serve",
     "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint \"src/scss/**/*.scss\" --syntax scss",
+    "stylelint": "stylelint \"source/scss/**/*.scss\" --syntax scss",
     "eslint": "eslint src/**/*.js",
     "test": "npm run editorconfig && npm run stylelint && npm run eslint",
-    "sort": "postcss \"src/scss/**/*.scss\" -c postcss.config.js -r"
+    "sort": "postcss \"source/scss/**/*.scss\" -c postcss.config.js -r"
   },
   "editorconfig-cli": [
     "src/*.html"

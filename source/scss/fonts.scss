@@ -4,7 +4,7 @@
   font-style: normal;
   font-display: swap;
   src: url("../fonts/RobotoCondensed.woff2") format("woff2"),
-  url("../fonts/RobotoCondensed.woff") format("woff");
+    url("../fonts/RobotoCondensed.woff") format("woff");
 }
 
 @font-face {
@@ -12,8 +12,8 @@
   font-weight: bold;
   font-style: normal;
   font-display: swap;
-  src: url("../fonts/RobotoCondensed-Bold.woff2"),
-  url("../fonts/RobotoCondensed-Bold.woff");
+  src: url("../fonts/RobotoCondensed-Bold.woff2") format("woff2"),
+    url("../fonts/RobotoCondensed-Bold.woff") format("woff");
 }
 
 @font-face {
@@ -22,5 +22,5 @@
   font-style: normal;
   font-display: swap;
   src: url("../fonts/PTMono.woff2") format("woff2"),
-  url("../fonts/PTMono.woff") format("woff");
+    url("../fonts/PTMono.woff") format("woff");
 }

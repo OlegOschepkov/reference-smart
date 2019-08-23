@@ -1,5 +1,5 @@
 @mixin hover {
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 
   &:hover {
     opacity: 0.5;
@@ -11,7 +11,7 @@
 }
 
 @mixin hover-blue {
-  transition: background-color .3s ease-in-out, color .3s ease-in-out, border .3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
 
   &:hover {
     background-color: $white;
@@ -20,8 +20,8 @@
   }
 }
 
-@mixin hover-white{
-  transition: background-color .3s ease-in-out, color .3s ease-in-out;
+@mixin hover-white {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
   &:hover {
     background-color: $blue;
@@ -30,6 +30,12 @@
 }
 
 @mixin reset {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin reset-list {
+  list-style: none;
   margin: 0;
   padding: 0;
 }

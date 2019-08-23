@@ -1,60 +1,100 @@
 'use strict';
 
 (function () {
-  const inputs = $('.js-input');
+  const maskedInputs = document.querySelectorAll("[data-mask]");
 
-  inputs.on('focus', function () {
-    let label = $(this).next();
-    label.addClass('active-label');
+  maskedInputs.forEach(function (el) {
+    el.addEventListener('input', maskInput);
+  })
+
+  function maskInput() {
+    const input = this;
+    const mask = input.dataset.mask;
+    const value = input.value;
+    const literalPattern = /[0\*]/;
+    const numberPattern = /[0-9]/;
+    let newValue = "";
+    try {
+      const maskLength = mask.length;
+      let valueIndex = 0;
+      let maskIndex = 0;
+
+      for (; maskIndex < maskLength;) {
+        if (maskIndex >= value.length) break;
+
+        if (mask[maskIndex] === "0" && value[valueIndex].match(numberPattern) === null) break;
+
+        // Found a literal
+        while (mask[maskIndex].match(literalPattern) === null) {
+          if (value[valueIndex] === mask[maskIndex]) break;
+          newValue += mask[maskIndex++];
+        }
+        newValue += value[valueIndex++];
+        maskIndex++;
+      }
+
+      input.value = newValue;
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  const inputs = document.querySelectorAll('.js-input');
+
+  inputs.forEach(function (el) {
+    el.addEventListener('focus', function () {
+      let label = el.parentNode.querySelector('label');
+      label.classList.add('active-label');
+    });
+
+    el.addEventListener('blur', function () {
+      let label = el.parentNode.querySelector('label');
+      if(!el.value) {
+        label.classList.remove('active-label');
+      }
+    })
   });
 
-  inputs.on('blur', function () {
-    if(!$(this).val()) {
-      let label = $(this).next();
-      label.removeClass('active-label');
+  const aboutText = document.querySelector('.about-us__text:last-of-type');
+
+  if (window.innerWidth < 1024) {
+      const text = aboutText.innerHTML;
+      const textArr = text.split('');
+      textArr.length = 215;
+      textArr.push('..');
+      aboutText.innerHTML = textArr.join('');
+    }
+
+  const accordBtns = document.querySelectorAll('.js-accordion');
+
+  const menu = document.querySelectorAll('.js-menu');
+
+  menu.forEach(function (el) {
+    if(window.innerWidth >= 768) {
+      if(el.classList.contains('menu-closed')) {
+        el.classList.remove('menu-closed')
+      }
+    } else {
+      el.classList.add('menu-closed')
     }
   });
 
-  $('.js-phone').mask('+0(000)000-00-00');
-
-  $('.js-scroll').on('click', function (e) {
-    e.preventDefault();
-    const scrollTarget = $($(this).attr('href')).offset().top;
-    $('html, body').animate({ scrollTop: scrollTarget }, 300);
-  })
-
-  const aboutText = $('.about-us__text:last-of-type');
-
-  if (window.innerWidth < 1024) {
-    let text = aboutText.text();
-    let textArr = text.split('');
-    textArr.length = 214;
-    textArr.push('..');
-    textArr.join('');
-    aboutText.html(textArr);
-  }
-
   if(window.innerWidth < 768) {
-    $('.site-menu').hide();
-    $('.contacts').hide();
+    accordBtns.forEach(function (el) {
+      el.addEventListener('click', function () {
+        el.classList.toggle('footer-section__button--closed');
+        let menu = el.parentNode.querySelector('.js-menu');
+        menu.classList.toggle('menu-closed')
+      })
+    })
   }
 
-  const accordBtn = $('.js-accordion');
-
-  accordBtn.each(function () {
-    $(this).on('click', function () {
-      $(this).next().toggle(300);
-      $(this).toggleClass('footer-section__button--closed')
-    })
-  })
-
-  const breakpoints = [767, 1023];
-  const breakpointsName = ['mobile', 'tablet'];
+  const breakpoints = [320, 767, 1023, 1440];
+  const breakpointsName = ['smallest', 'phablet', 'tablet', 'desktop'];
 
   function checkbp() {
-    const ww = $(window).width();
+    const ww = window.innerWidth;
     let returnVal = breakpointsName[0];
-
     for (let i = 0; i < breakpoints.length; i++) {
       if (ww > breakpoints[i]) {
         returnVal = breakpointsName[i + 1];
@@ -69,9 +109,9 @@
   const breakpointLoaded = checkbp();
   let breakpointCurrent;
 
-  $(window).resize(function () {
+  window.addEventListener('resize', function () {
     breakpointCurrent = checkbp();
-    if (breakpointLoaded !== breakpointCurrent) {
+    if (breakpointLoaded != breakpointCurrent) {
       window.location.href = window.location.href;
       console.log('reloaded ' + breakpointCurrent);
     };

@@ -18,21 +18,11 @@ var header = require('gulp-header');
 var cheerio = require('gulp-cheerio');
 
 gulp.task('styles', function () {
-  gulp.src('source/scss/**/*.scss')
-    .pipe(plumber())
-    .pipe(gulp.dest('build/styles/scss'));
   gulp.src('source/scss/style.scss')
     .pipe(plumber())
     .pipe(scss())
     .pipe(postcss([
-      autoprefixer({browsers: [
-        'last 1 version',
-        'last 2 Safari versions',
-        'last 2 Chrome versions',
-        'last 2 Firefox versions',
-        'last 2 Opera versions',
-        'last 2 Edge versions',
-      ]}),
+      autoprefixer(),
       mqpacker({
         sort: true
       })
@@ -41,26 +31,6 @@ gulp.task('styles', function () {
     .pipe(rename('style.min.css'))
     .pipe(gulp.dest('build/styles'))
     .pipe(server.reload({stream: true}));
-  gulp.src('source/scss/plugins/*.css')
-    .pipe(plumber())
-    .pipe(postcss([
-      autoprefixer({browsers: [
-        'last 1 version',
-        'last 2 Safari versions',
-        'last 2 Chrome versions',
-        'last 2 Firefox versions',
-        'last 2 Opera versions',
-        'last 2 Edge versions',
-        'IE 11'
-      ]}),
-      mqpacker({
-        sort: true
-      })
-    ]))
-    .pipe(minify())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('build/styles/plugins'))
-    .pipe(server.reload({stream: true}));
 });
 
 gulp.task('jscript', function () {
@@ -68,6 +38,8 @@ gulp.task('jscript', function () {
     .pipe(plumber())
     .pipe(concat('main.js'))
     .pipe(header(' \'use strict\'; '))
+    .pipe(jsmin())
+    .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('build/js/'))
     .pipe(server.reload({stream: true}));
 });
@@ -76,8 +48,8 @@ gulp.task('jplugins', function (){
   gulp.src('source/js/plugins/*.js')
     .pipe(plumber())
     .pipe(jsmin())
-    .pipe(rename({suffix: '.min'}))
     .pipe(concat('plugins.js'))
+    .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('build/js'));
 });
 
@@ -99,16 +71,11 @@ gulp.task('images', function () {
     .pipe(image({
       jpegRecompress: true,
       jpegoptim: true,
-      mozjpeg: false
+      mozjpeg: false,
+      optimizationLevel: 7,
+      verbose: true
     }))
   .pipe(gulp.dest('build/img'));
-  gulp.src('build/img/**/*.{png,jpg,gif}')
-    .pipe(image({
-      jpegRecompress: true,
-      jpegoptim: true,
-      mozjpeg: false
-    }))
-    .pipe(gulp.dest('build/img'));
 });
 
 gulp.task('svgs', function () {

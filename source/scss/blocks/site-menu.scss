@@ -1,21 +1,21 @@
-.site-menu{
-  @include reset();
-}
+.site-menu {
+  @include reset-list();
 
-.site-menu__list {
-  display: flex;
+  display: block;
   list-style: none;
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
+  column-count: 2;
+  column-gap: 72px;
+  break-inside: avoid;
+  max-height: 1000px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
 }
 
-.site-menu__item:first-of-type {
-  margin-right: 72px;
-}
-
-.site-menu__item:last-of-type {
-  margin-right: 32px;
+.site-menu__sublist {
+  @include reset-list();
 }
 
 .site-menu__link {
@@ -32,22 +32,27 @@
   }
 }
 
+@media (max-width: 1440px) {
+  .site-menu {
+    column-gap: 40px;
+    padding-right: 20px;
+  }
+}
+
 @media (max-width: $tablet-width) {
-  .site-menu__list {
+  .site-menu {
     flex-direction: column;
+    padding-right: 0;
+    column-count: auto;
   }
 }
 
 @media (max-width: $mobile-width) {
-  .site-menu__list {
-    margin-bottom: 26px;
+  .site-menu {
+    margin-bottom: 0;
   }
 
-  .site-menu__item {
-    margin-right: 0;
-    width: 100%;
-  }
-  .site-menu__item:first-of-type {
-    margin-right: 0;
+  .site-menu__subitem:last-of-type {
+    margin-bottom: 26px;
   }
 }

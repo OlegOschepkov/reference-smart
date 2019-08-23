@@ -5,6 +5,7 @@
 }
 
 .footer-section__title {
+  @include reset();
   font-family: $roboto-font;
   font-weight: normal;
   font-size: 15px;
@@ -21,6 +22,10 @@
 
 .footer-section__block--social {
   margin-right: 14.6%;
+}
+
+.footer-section__text {
+  @include reset();
 }
 
 @media (max-width: $tablet-width) {
@@ -113,10 +118,12 @@
     position: absolute;
     right: 15px;
     top: 27px;
+    appearance: none;
+    text-transform: uppercase;
 
-    &:after {
+    &::after {
       position: absolute;
-      content: '';
+      content: "";
       display: block;
       height: 1px;
       width: 100%;
@@ -126,9 +133,9 @@
     }
 
     &--closed {
-      &:after {
+      &::after {
         position: absolute;
-        content: '';
+        content: "";
         display: block;
         height: 1px;
         width: 100%;
@@ -137,9 +144,9 @@
         background-color: $grey4;
       }
 
-      &:before {
+      &::before {
         position: absolute;
-        content: '';
+        content: "";
         display: block;
         height: 100%;
         width: 1px;

@@ -1,14 +1,21 @@
 .contacts {
-  @include reset();
+  @include reset-list();
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  list-style: none;
+  max-height: 1000px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.contacts__list {
+  @include reset-list();
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   list-style: none;
 }
-
-//.contacts__item {
-//  margin-right: 65px;
-//}
 
 .contacts__link {
   font-family: $mono-font;
@@ -24,12 +31,16 @@
   }
 }
 
-@media (max-width: $tablet-width) {
+.contacts__item {
+  @include reset();
 }
 
 @media (max-width: $mobile-width) {
   .contacts {
     width: 100%;
+  }
+
+  .contacts__list .contacts__item:last-of-type {
     margin-bottom: 26px;
   }
 }

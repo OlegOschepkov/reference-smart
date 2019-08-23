@@ -22,6 +22,7 @@
 }
 
 .about-us__title {
+  @include reset();
   font-family: $roboto-font;
   font-weight: normal;
   font-size: 36px;
@@ -31,7 +32,7 @@
 }
 
 .about-us__text {
-  margin: 0;
+  @include reset();
   margin-bottom: 20px;
   font-family: $mono-font;
   font-weight: normal;
@@ -53,8 +54,13 @@
   padding: 13px 46px;
   color: $blue;
   text-transform: uppercase;
-  @include hover-white();
   background-color: $white;
+
+  @include hover-white();
+
+  &:focus {
+    outline: 2px dotted $grey4;
+  }
 }
 
 @media (max-width: $tablet-width) {

@@ -1,18 +1,46 @@
 .remodal {
   background-color: $blue;
   width: 490px;
-  padding: 33px 40px 35px;
+  padding: 30px 40px 35px;
 }
 
 .remodal .callback-form {
   padding-left: 0;
 }
 
+.remodal .callback-form__title {
+  font-family: $roboto-font;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 140.62%;
+}
+
+.remodal .callback-form__text {
+  text-align: left;
+  margin-bottom: 34px;
+}
+
 .remodal .callback-form__block {
   width: 100%;
+  margin-bottom: 34px;
+}
+
+.remodal .callback-form__label {
+  left: 23px;
+}
+
+.remodal .callback-form__input--big {
+  height: 104px;
+}
+
+.remodal .callback-form__block--wide {
+  margin-bottom: 21px;
 }
 
 .remodal .remodal-close {
+  appearance: none;
+  border: none;
+  background-color: transparent;
   left: auto;
   right: 0;
   @include hover();
@@ -26,4 +54,24 @@
 .remodal .callback-form__check-label {
   padding-right: 30px;
   text-align: left;
+  padding-left: 47px;
+
+  &::after {
+    left: -1px;
+  }
+}
+
+.remodal .callback-form__button {
+  margin-bottom: 24px;
+}
+
+@media (max-width: $tablet-width) {
+}
+
+@media (max-width: $mobile-width) {
+  .remodal {
+    max-width: 490px;
+    width: 100%;
+    padding: 15px 20px 20px;
+  }
 }
