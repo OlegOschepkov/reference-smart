@@ -1,11 +1,14 @@
-'use strict';
-
 (function () {
+
   const maskedInputs = document.querySelectorAll("[data-mask]");
 
-  maskedInputs.forEach(function (el) {
-    el.addEventListener('input', maskInput);
-  })
+  function maskedInputsInit() {
+    for (let i=0; i< maskedInputs.length; i++) {
+      maskedInputs[i].addEventListener('input', maskInput);
+    }
+  }
+
+  maskedInputsInit();
 
   function maskInput() {
     const input = this;
@@ -41,19 +44,23 @@
 
   const inputs = document.querySelectorAll('.js-input');
 
-  inputs.forEach(function (el) {
-    el.addEventListener('focus', function () {
-      let label = el.parentNode.querySelector('label');
-      label.classList.add('active-label');
-    });
+  function inputInit() {
+    for(let i=0; i<inputs.length; i++) {
+      inputs[i].addEventListener('focus', function () {
+        let label = this.parentNode.querySelector('label');
+        label.classList.add('active-label');
+      });
 
-    el.addEventListener('blur', function () {
-      let label = el.parentNode.querySelector('label');
-      if(!el.value) {
-        label.classList.remove('active-label');
-      }
-    })
-  });
+      inputs[i].addEventListener('blur', function () {
+        let label = this.parentNode.querySelector('label');
+        if(!this.value) {
+          label.classList.remove('active-label');
+        }
+      })
+    }
+  }
+
+  inputInit();
 
   const aboutText = document.querySelector('.about-us__text:last-of-type');
 
@@ -67,26 +74,34 @@
 
   const accordBtns = document.querySelectorAll('.js-accordion');
 
-  const menu = document.querySelectorAll('.js-menu');
+  const menus = document.querySelectorAll('.js-menu');
 
-  menu.forEach(function (el) {
-    if(window.innerWidth >= 768) {
-      if(el.classList.contains('menu-closed')) {
-        el.classList.remove('menu-closed')
+  function menusInit() {
+    for(let i=0; i<menus.length; i++) {
+      if(window.innerWidth >= 768) {
+        if(menus[i].classList.contains('menu-closed')) {
+          menus[i].classList.remove('menu-closed')
+        }
+      } else {
+        menus[i].classList.add('menu-closed')
       }
-    } else {
-      el.classList.add('menu-closed')
     }
-  });
+  }
 
-  if(window.innerWidth < 768) {
-    accordBtns.forEach(function (el) {
-      el.addEventListener('click', function () {
-        el.classList.toggle('footer-section__button--closed');
-        let menu = el.parentNode.querySelector('.js-menu');
+  menusInit();
+
+  function accordBtnsInit() {
+    for(let i=0; i<accordBtns.length; i++) {
+      accordBtns[i].addEventListener('click', function () {
+        this.classList.toggle('footer-section__button--closed');
+        let menu = this.parentNode.querySelector('.js-menu');
         menu.classList.toggle('menu-closed')
       })
-    })
+    }
+  }
+
+  if(window.innerWidth < 768) {
+    accordBtnsInit()
   }
 
   const breakpoints = [320, 767, 1023, 1440];
@@ -114,7 +129,7 @@
     if (breakpointLoaded != breakpointCurrent) {
       window.location.href = window.location.href;
       console.log('reloaded ' + breakpointCurrent);
-    };
+    }
   });
 
   const form = document.querySelector('#modal-form');
@@ -133,7 +148,7 @@
     form.classList.add('hidden');
     btnClose.removeEventListener('click', closeModal);
     document.removeEventListener('keydown', closeByEsc);
-  };
+  }
 
   function openModal (e) {
     e.preventDefault();
@@ -142,14 +157,13 @@
     form.classList.remove('hidden');
     btnClose.addEventListener('click', closeModal);
     document.addEventListener('keydown', closeByEsc);
-  };
+  }
 
   function closeByEsc (e) {
     if (e.keyCode === escKeyCode || e.key === escKeyCode || e.keyIdentifier === escKeyCode) {
       closeModal(e);
     }
-  };
-
+  }
 
 })();
 
