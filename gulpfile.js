@@ -48,7 +48,6 @@ gulp.task('jplugins', function (){
   gulp.src('source/js/plugins/*.js')
     .pipe(plumber())
     .pipe(jsmin())
-    .pipe(concat('plugins.js'))
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('build/js'));
 });

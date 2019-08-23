@@ -250,8 +250,8 @@
   </div>
 </footer>
 
-<div class="remodal-bg">
-  <div class="remodal" data-remodal-id="modal">
+<div class="modal-bg hidden" id="modal-form">
+  <div class="modal">
     <form action="#" class="callback-form">
       <h3 class="callback-form__title">Закажите звонок</h3>
       <p class="callback-form__text">Оставьте контакты, мы&nbsp;проконсультируем вас бесплатно в&nbsp;удобное время</p>
@@ -273,19 +273,14 @@
         <label for="agreement-m" class="callback-form__check-label">Я&nbsp;согласен на&nbsp;обработку персональных данных</label>
       </div>
     </form>
-    <button type="button" data-remodal-action="close" class="remodal-close"></button>
+    <button type="button" class="modal-close"></button>
   </div>
 </div>
 
-<!--<script src="js/plugins.min.js"></script>-->
+<script src="js/picturefill.min.js"></script>
+<script src="js/svgxuse.min.js"></script>
 <script src="js/main.min.js"></script>
 
-<!--<script>-->
-<!--  var selector = document.getElementById("js-phone");-->
-
-<!--  var im = new Inputmask("99-9999999");-->
-<!--  im.mask(selector);-->
-<!--</script>-->
 </body>
 
 </html>

@@ -117,6 +117,40 @@
     };
   });
 
+  const form = document.querySelector('#modal-form');
+  const btnClose = document.querySelector('.modal-close');
+  const btnOpen = document.querySelector('.js-callback');
+  const page = document.querySelector('html');
+  const body = document.querySelector('body');
+  const escKeyCode = 27;
+
+  btnOpen.addEventListener('click', openModal);
+
+  function closeModal (e) {
+    e.preventDefault();
+    page.classList.remove('is-locked');
+    body.classList.remove('scroll-fix');
+    form.classList.add('hidden');
+    btnClose.removeEventListener('click', closeModal);
+    document.removeEventListener('keydown', closeByEsc);
+  };
+
+  function openModal (e) {
+    e.preventDefault();
+    page.classList.add('is-locked');
+    body.classList.add('scroll-fix');
+    form.classList.remove('hidden');
+    btnClose.addEventListener('click', closeModal);
+    document.addEventListener('keydown', closeByEsc);
+  };
+
+  function closeByEsc (e) {
+    if (e.keyCode === escKeyCode || e.key === escKeyCode || e.keyIdentifier === escKeyCode) {
+      closeModal(e);
+    }
+  };
+
+
 })();
 
 
