@@ -33,14 +33,6 @@
   margin-bottom: 44px;
 }
 
-.page-slogan__stripe {
-  height: 2px;
-  width: 82px;
-  background-color: $white;
-  margin-top: 17px;
-  margin-left: 4px;
-}
-
 .page-slogan__text {
   @include reset();
   padding-left: 98px;
@@ -51,7 +43,7 @@
   color: $white;
   position: relative;
 
-  &:after {
+  &::after {
     position: absolute;
     content: "";
     display: block;
@@ -134,13 +126,9 @@
     line-height: 156.8%;
     padding-left: 51px;
 
-    &:after {
+    &::after {
       width: 32px;
     }
-  }
-
-  .page-slogan__stripe {
-    width: 60px;
   }
 
   .page-slogan__photo {
@@ -192,7 +180,7 @@
     font-size: 16px;
     padding-left: 51px;
 
-    &:after {
+    &::after {
       width: 32px;
     }
   }
@@ -222,9 +210,5 @@
 
   .page-slogan__wrapper {
     margin-left: 0;
-  }
-
-  .page-slogan__stripe {
-    width: 81px;
   }
 }

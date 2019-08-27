@@ -658,13 +658,6 @@ label.active-label {
   flex-wrap: nowrap;
   margin-bottom: 44px; }
 
-.page-slogan__stripe {
-  height: 2px;
-  width: 82px;
-  background-color: #ffffff;
-  margin-top: 17px;
-  margin-left: 4px; }
-
 .page-slogan__text {
   margin: 0;
   padding: 0;
@@ -675,7 +668,7 @@ label.active-label {
   line-height: 34px;
   color: #ffffff;
   position: relative; }
-  .page-slogan__text:after {
+  .page-slogan__text::after {
     position: absolute;
     content: "";
     display: block;
@@ -1370,10 +1363,8 @@ label.active-label {
     font-size: 18px;
     line-height: 156.8%;
     padding-left: 51px; }
-    .page-slogan__text:after {
+    .page-slogan__text::after {
       width: 32px; }
-  .page-slogan__stripe {
-    width: 60px; }
   .page-slogan__photo {
     right: -18px;
     left: auto;
@@ -1546,7 +1537,7 @@ label.active-label {
   .page-slogan__text {
     font-size: 16px;
     padding-left: 51px; }
-    .page-slogan__text:after {
+    .page-slogan__text::after {
       width: 32px; }
   .page-slogan__photo {
     right: -26px;
@@ -1565,8 +1556,6 @@ label.active-label {
     margin: 0 auto; }
   .page-slogan__wrapper {
     margin-left: 0; }
-  .page-slogan__stripe {
-    width: 81px; }
   .advantages {
     padding: 37px 13px 76px; }
   .advantages-list__title {
