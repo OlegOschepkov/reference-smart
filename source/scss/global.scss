@@ -16,6 +16,7 @@ body {
   font-size: 16px;
   line-height: 22px;
   color: $grey;
+  background-color: $light-grey;
 }
 
 a {
@@ -89,10 +90,6 @@ label.active-label {
 .is-locked {
   overflow: hidden;
   touch-action: none;
-}
-
-.scroll-fix {
-  padding-right: 17px;
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */

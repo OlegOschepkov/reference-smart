@@ -2,6 +2,21 @@
 
 (function () {
 
+  function getScrollbarWidth() {
+    var outer = document.createElement('div');
+    outer.style.visibility = 'hidden';
+    outer.style.overflow = 'scroll';
+    outer.style.msOverflowStyle = 'scrollbar';
+    document.body.appendChild(outer);
+    var inner = document.createElement('div');
+    outer.appendChild(inner);
+    var scrollbarWidth = (outer.offsetWidth - inner.offsetWidth);
+    outer.parentNode.removeChild(outer);
+    return scrollbarWidth;
+  }
+
+  var scrollWidth = getScrollbarWidth();
+
   var scrolls = document.querySelectorAll('.js-scroll');
 
   function smoothScroll() {
@@ -200,7 +215,7 @@
   function closeModal(e) {
     e.preventDefault();
     page.classList.remove('is-locked');
-    body.classList.remove('scroll-fix');
+    body.removeAttribute('style');
     form.classList.add('hidden');
     btnClose.removeEventListener('click', closeModal);
     document.removeEventListener('keydown', closeByEsc);
@@ -209,7 +224,7 @@
   function openModal(e) {
     e.preventDefault();
     page.classList.add('is-locked');
-    body.classList.add('scroll-fix');
+    body.setAttribute('style', 'padding-right: ' + scrollWidth + 'px;');
     form.classList.remove('hidden');
     btnClose.addEventListener('click', closeModal);
     document.addEventListener('keydown', closeByEsc);
@@ -220,5 +235,4 @@
       closeModal(e);
     }
   }
-
 })();
