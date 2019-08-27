@@ -25,7 +25,8 @@
   },
   "editorconfig-cli": [
     "source/scss/**/*",
-    "source/js/main.js"
+    "source/js/main.js",
+    "source/*.html"
   ],
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.0.0",
