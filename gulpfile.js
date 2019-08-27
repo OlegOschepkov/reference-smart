@@ -17,6 +17,13 @@ var concat = require('gulp-concat');
 var header = require('gulp-header');
 var cheerio = require('gulp-cheerio');
 
+var cache = require('gulp-cache');
+var imagemin = require('gulp-imagemin');
+var imageminPngquant = require('imagemin-pngquant');
+var imageminZopfli = require('imagemin-zopfli');
+var imageminMozjpeg = require('imagemin-mozjpeg');
+var imageminGiflossy = require('imagemin-giflossy');
+
 gulp.task('styles', function () {
   gulp.src('source/scss/style.scss')
     .pipe(plumber())
@@ -27,6 +34,7 @@ gulp.task('styles', function () {
         sort: true
       })
     ]))
+    .pipe(gulp.dest('build/styles'))
     .pipe(minify())
     .pipe(rename('style.min.css'))
     .pipe(gulp.dest('build/styles'))
@@ -37,7 +45,7 @@ gulp.task('jscript', function () {
   gulp.src('source/js/*.js')
     .pipe(plumber())
     .pipe(concat('main.js'))
-    .pipe(header(' \'use strict\'; '))
+    .pipe(gulp.dest('build/js/'))
     .pipe(jsmin())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('build/js/'))
@@ -68,20 +76,45 @@ gulp.task('serve', function () {
 
 gulp.task('images', function () {
   gulp.src('build/img/**/*.{png,jpg,gif}')
-    .pipe(image({
-      jpegRecompress: true,
-      jpegoptim: true,
-      mozjpeg: false,
-      optimizationLevel: 7,
-      verbose: true
-    }))
-  .pipe(gulp.dest('build/img'));
+    .pipe(cache(imagemin([
+      //png
+      imageminPngquant({
+        speed: 1,
+        quality: [0.95, 1]
+      }),
+      imageminZopfli({
+        more: true,
+        iterations: 30 // very slow but more effective
+      }),
+      //gif
+      // imagemin.gifsicle({
+      //     interlaced: true,
+      //     optimizationLevel: 3
+      // }),
+      //gif very light lossy, use only one of gifsicle or Giflossy
+      imageminGiflossy({
+        optimizationLevel: 3,
+        optimize: 3, //keep-empty: Preserve empty transparent frames
+        lossy: 2
+      }),
+      //svg
+      imagemin.svgo({
+        plugins: [{
+          removeViewBox: false
+        }]
+      }),
+      //jpg lossless
+      // imagemin.jpegtran({
+      //   progressive: true
+      // }),
+      //jpg very light lossy, use vs jpegtran
+      imageminMozjpeg({
+        quality: 90
+      })
+    ])))  .pipe(gulp.dest('build/img'));
 });
 
 gulp.task('svgs', function () {
-  gulp.src('build/img/*.svg')
-    .pipe(svgmin())
-    .pipe(gulp.dest('build/img'));
   gulp.src('build/img/*.svg')
     .pipe(svgmin())
     .pipe(gulp.dest('build/img'));

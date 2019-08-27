@@ -69,6 +69,7 @@
   height: 17px;
   width: 17px;
   cursor: pointer;
+
   @include hover();
   background-image: url("../img/cross.svg");
   background-position: center;
@@ -93,9 +94,6 @@
 
 .modal .callback-form__button {
   margin-bottom: 24px;
-}
-
-@media (max-width: $tablet-width) {
 }
 
 @media (max-width: $mobile-width) {
