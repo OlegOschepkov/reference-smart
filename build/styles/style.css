@@ -1006,8 +1006,9 @@ label.active-label {
   line-height: 22px;
   padding: 15px;
   font-family: "PT Mono", "Courier New", monospace;
-  outline: none;
-  border-radius: 0; }
+  outline: 1px solid transparent;
+  border-radius: 0;
+  transition: outline-color 0.2s ease; }
   .callback-form__input--big {
     height: 154px;
     resize: none; }

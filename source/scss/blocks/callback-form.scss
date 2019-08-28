@@ -45,8 +45,9 @@
   line-height: 22px;
   padding: 15px;
   font-family: $mono-font;
-  outline: none;
+  outline: 1px solid transparent;
   border-radius: 0;
+  transition: outline-color 0.2s ease;
 
   &--big {
     height: 154px;
