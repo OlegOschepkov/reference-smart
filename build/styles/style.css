@@ -1011,7 +1011,7 @@ label.active-label {
   .callback-form__input--big {
     height: 154px;
     resize: none; }
-  .callback-form__input:focus {
+  .callback-form__input:focus, .callback-form__input:hover {
     outline: 1px solid #c4c4c4; }
 
 .callback-form__label {

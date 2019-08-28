@@ -53,7 +53,7 @@
     resize: none;
   }
 
-  &:focus {
+  &:focus, &:hover {
     outline: 1px solid #c4c4c4;
   }
 }
