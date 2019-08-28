@@ -52,6 +52,10 @@
     height: 154px;
     resize: none;
   }
+
+  &:focus {
+    outline: 1px solid #c4c4c4;
+  }
 }
 
 .callback-form__label {

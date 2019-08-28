@@ -896,20 +896,6 @@ label.active-label {
   margin-bottom: 30px;
   box-shadow: inset 0 0 0 1px transparent;
   transition: box-shadow 0.3s ease-in-out; }
-  .services__item::after {
-    position: absolute;
-    content: "";
-    bottom: 0;
-    right: 0;
-    display: block;
-    height: 63px;
-    width: 63px;
-    background-color: #00b2ff;
-    background-image: url("../img/arrow.svg");
-    background-position: center;
-    background-size: 8px;
-    background-repeat: no-repeat;
-    cursor: pointer; }
   .services__item:hover {
     box-shadow: inset 0 0 0 1px #00b2ff; }
     .services__item:hover img {
@@ -926,7 +912,22 @@ label.active-label {
   padding: 0;
   display: block;
   height: 100%;
-  padding: 50px 0 0 44px; }
+  padding: 50px 0 0 44px;
+  position: relative; }
+  .services__link::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    right: 0;
+    display: block;
+    height: 63px;
+    width: 63px;
+    background-color: #00b2ff;
+    background-image: url("../img/arrow.svg");
+    background-position: center;
+    background-size: 8px;
+    background-repeat: no-repeat;
+    cursor: pointer; }
 
 .services__image {
   position: absolute;
@@ -1010,6 +1011,8 @@ label.active-label {
   .callback-form__input--big {
     height: 154px;
     resize: none; }
+  .callback-form__input:focus {
+    outline: 1px solid #c4c4c4; }
 
 .callback-form__label {
   font-family: "PT Mono", "Courier New", monospace;
